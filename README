@@ -1,0 +1,34 @@
+SimpleAudioPlayer
+=================
+
+ATTENTION: This plugin is under active development and not finished! A working version is expected in the upcoming days.
+
+This is a very simple audio player based on the great flash / javascript system developed by http://wpaudioplayer.com/
+
+
+Configuration
+=============
+
+simple_audio_player_include_tag
+  ':force => true' to force loading the include tags
+
+
+Example
+=======
+
+
+app/views/layout/application.html.erb:
+
+<head>
+  <%= simple_audio_player_include_tag -%>
+</head>
+
+
+app/controllers/example_controller.rb:
+
+ExampleController < ApplicationController
+  uses_simple_audio_player :only => 'show', :config => { :width => 290, :initialvolume => 100 }
+end
+
+
+Copyright (c) 2009 Maximilian Schulz, released under the MIT license
